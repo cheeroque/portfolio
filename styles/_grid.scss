@@ -39,7 +39,7 @@
       flex: 0 0 calc(100% / 12 * #{$count});
     }
   }
-  
+
   @for $count from 1 through 12 {
     @each $breakpoint, $width in $breakpoints {
       @include media-min-width($breakpoint) {

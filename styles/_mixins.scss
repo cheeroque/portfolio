@@ -11,3 +11,21 @@
     @content;
   }
 }
+
+@mixin responsive-font-size($base, $ratio) {
+  font-size: $base;
+
+  @each $breakpoint, $width in $breakpoints {
+    @include media-min-width($breakpoint) {
+      $cur: map-get($container-widths, $breakpoint);
+      $max: map-get($container-widths, 'xxl');
+      $multiplier: 1;
+
+      @if $cur != 'none' {
+        $multiplier: math.div($cur, $max) * $ratio;
+      }
+
+      font-size: $base * $multiplier;
+    }
+  }
+}
