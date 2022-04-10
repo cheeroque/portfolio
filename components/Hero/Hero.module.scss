@@ -1,0 +1,18 @@
+@import '~/styles/variables';
+
+.section {
+  color: var(--on-hero);
+  background-color: var(--hero);
+
+  h2 {
+    color: var(--on-hero-accent);
+  }
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.heroImage {
+  
+}

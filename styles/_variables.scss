@@ -1,0 +1,23 @@
+$ff-base: Roboto, sans-serif;
+$ff-alt: Poppins, sans-serif;
+
+$grid-gap: 1.5rem;
+$transition: all 0.2s ease-in-out;
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-widths: (
+  xs: none,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);

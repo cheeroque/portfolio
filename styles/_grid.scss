@@ -1,0 +1,52 @@
+/* Container */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $grid-gap * 0.5;
+  padding-right: $grid-gap * 0.5;
+}
+
+.container-fluid {
+  padding-left: $grid-gap * 0.5;
+  padding-right: $grid-gap * 0.5;
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @include media-min-width($breakpoint) {
+    .container {
+      max-width: map-get($container-widths, $breakpoint);
+    }
+  }
+}
+
+/* Row & cols */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $grid-gap * -0.5;
+  margin-right: $grid-gap * -0.5;
+
+  [class*='col'] {
+    flex: 1 1 0;
+    padding-left: $grid-gap * 0.5;
+    padding-right: $grid-gap * 0.5;
+  }
+
+  @for $count from 1 through 12 {
+    .col-#{$count} {
+      flex: 0 0 calc(100% / 12 * #{$count});
+    }
+  }
+  
+  @for $count from 1 through 12 {
+    @each $breakpoint, $width in $breakpoints {
+      @include media-min-width($breakpoint) {
+        .col-#{$breakpoint}-#{$count} {
+          flex-basis: calc(100% / 12 * #{$count});
+        }
+      }
+    }
+  }
+}
