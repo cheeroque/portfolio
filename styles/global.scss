@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -11,8 +15,75 @@ html {
 
 body {
   @include responsive-font-size(1.25rem, 1.2);
+
+  line-height: 1.5;
 }
 
-* {
-  box-sizing: border-box;
+.section {
+  @include responsive-font-size(1.25rem, 1.2);
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  h2,
+  .h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &.section-secondary {
+    background-color: var(--secondary-container);
+
+    h2,
+    .h2 {
+      color: var(--on-secondary-container);
+    }
+  }
+
+  &.section-tertiary {
+    background-color: var(--tertiary-container);
+
+    h2,
+    .h2 {
+      color: var(--on-tertiary-container);
+    }
+  }
+
+  &.section-light {
+    background-color: var(--surface-variant);
+
+    h2,
+    .h2 {
+      color: var(--on-surface-variant);
+    }
+  }
+}
+
+@include media-min-width('md') {
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@include media-min-width('xl') {
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@include media-min-width('xxl') {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    h2,
+    .h2 {
+      margin-bottom: 3rem;
+    }
+  }
 }
