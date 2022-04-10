@@ -1,0 +1,28 @@
+.btn {
+  @include responsive-font-size(1.125rem, 1.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6875rem 0.9375rem;
+  font-family: $ff-alt;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: $transition;
+  transition-property: color, border-color, background-color;
+  appearance: none;
+
+  &:not(:disabled):active {
+    color: var(--secondary);
+  }
+
+  &:not(:disabled):focus {
+    color: var(--secondary);
+  }
+
+  &:not(:disabled):hover {
+    color: var(--primary);
+  }
+}

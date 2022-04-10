@@ -1,0 +1,15 @@
+@import '~/styles/mixins';
+@import '~/styles/variables';
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+@include media-min-width('lg') {
+  .skillsGrid {
+    gap: 3rem;
+  }
+}

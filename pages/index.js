@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import Hero from '../components/Hero';
 import SectionProfile from '../components/SectionProfile';
+import SectionSkills from '../components/SectionSkills';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <main>
         <Hero />
         <SectionProfile />
+        <SectionSkills />
       </main>
     </div>
   );

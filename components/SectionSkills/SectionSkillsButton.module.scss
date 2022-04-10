@@ -1,0 +1,35 @@
+@import '~/styles/mixins';
+@import '~/styles/variables';
+
+.btn {
+  color: var(--on-background);
+  background-color: var(--background);
+
+  &:not(:disabled):active {
+    color: var(--on-primary-container);
+    background-color: var(--primary-container);
+  }
+
+  &:not(:disabled):focus {
+    color: var(--on-primary-container);
+    background-color: var(--primary-container);
+  }
+
+  &:not(:disabled):hover {
+    color: var(--on-secondary-container);
+    background-color: var(--secondary-container);
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+@include media-min-width('lg') {
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
