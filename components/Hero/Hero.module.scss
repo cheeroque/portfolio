@@ -1,8 +1,28 @@
+@import '~/styles/mixins';
 @import '~/styles/variables';
 
-.section {
+.sectionHero {
+  position: relative;
+  height: 600px;
   color: var(--on-hero);
   background-color: var(--hero);
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 1000px;
+    height: 1000px;
+    background-color: var(--background);
+    opacity: 0.15;
+    transform: scale(0.9) translateX(-50%);
+    clip-path: path(
+      'm520.5 0.0143c-85.83 1.0308-177.86 57.779-306.01 167.99-273.4 235.12-281.6 344.11-46.48 617.51 235.12 273.4 344.11 281.6 617.51 46.482 273.39-235.12 281.6-344.11 46.477-617.51-124.91-145.24-214.22-215.64-311.49-214.47z'
+    );
+  }
 
   h2 {
     color: var(--on-hero-accent);
@@ -11,8 +31,82 @@
 
 .container {
   max-width: 1440px;
+  height: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .heroImage {
-  
+  display: block;
+  position: absolute;
+  left: calc(50% - 132px);
+  bottom: -32px;
+  width: 336px;
+  height: auto;
+}
+
+@include media-min-width('sm') {
+  .container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .heroImage {
+    left: auto;
+    right: 0;
+    bottom: -32px;
+  }
+}
+
+@include media-min-width('md') {
+  .sectionHero {
+    &::before {
+      transform: scale(1) translateX(-57%);
+    }
+  }
+
+  .row {
+    align-items: center;
+    height: 100%;
+  }
+
+  .heroImage {
+    width: 420px;
+    bottom: 0;
+  }
+}
+
+@include media-min-width('xl') {
+  .sectionHero {
+    &::before {
+      left: 50%;
+      right: auto;
+      transform: scale(1.4);
+    }
+  }
+
+  .heroImage {
+    right: calc(
+      50vw - #{map-get($container-widths, 'xl') * 0.5} - #{$grid-gap}
+    );
+  }
+}
+
+@include media-min-width('xxl') {
+  .sectionHero {
+    height: 800px;
+
+    &::before {
+      left: 50%;
+      right: auto;
+      transform: scale(1.4);
+    }
+  }
+
+  .heroImage {
+    right: calc(
+      50vw - #{map-get($container-widths, 'xxl') * 0.5} - #{$grid-gap}
+    );
+    width: 620px;
+  }
 }

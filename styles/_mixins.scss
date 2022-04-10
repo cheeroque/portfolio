@@ -25,7 +25,7 @@
         $multiplier: math.div($cur, $max) * $ratio;
       }
 
-      font-size: $base * $multiplier;
+      font-size: $base + $base * math.max(($multiplier - 1), 0);
     }
   }
 }

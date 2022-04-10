@@ -37,14 +37,16 @@
   @for $count from 1 through 12 {
     .col-#{$count} {
       flex: 0 0 calc(100% / 12 * #{$count});
+      max-width: calc(100% / 12 * #{$count});
     }
   }
 
-  @for $count from 1 through 12 {
-    @each $breakpoint, $width in $breakpoints {
+  @each $breakpoint, $width in $breakpoints {
+    @for $count from 1 through 12 {
       @include media-min-width($breakpoint) {
         .col-#{$breakpoint}-#{$count} {
           flex-basis: calc(100% / 12 * #{$count});
+          max-width: calc(100% / 12 * #{$count});
         }
       }
     }
