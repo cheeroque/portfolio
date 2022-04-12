@@ -1,0 +1,67 @@
+@import '~/styles/mixins';
+@import '~/styles/variables';
+
+.articleHeader {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+
+  .duration {
+    display: none;
+    margin-left: auto;
+    margin-bottom: 0.3125rem;
+    color: var(--primary);
+  }
+}
+
+.position {
+  margin-bottom: 1rem;
+}
+
+.break {
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: var(--primary);
+}
+
+@include media-min-width('lg') {
+  .articleHeader {
+    margin-bottom: 3rem;
+
+    .duration {
+      display: block;
+    }
+  }
+
+  .position {
+    margin-bottom: 3rem;
+  }
+
+  .positionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+    h6 {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+      color: var(--primary);
+
+      &::before {
+        display: block;
+        content: '';
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-right: 1rem;
+        border-radius: 99rem;
+        background-color: var(--primary);
+      }
+    }
+  }
+
+  .break {
+    margin-bottom: 4rem;
+  }
+}

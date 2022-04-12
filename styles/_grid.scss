@@ -70,8 +70,10 @@
     }
 
     @for $offset from 1 through 11 {
-      .col-offset-#{$breakpoint}-#{$offset} {
-        margin-left: calc(100% / 12 * #{$offset});
+      @include media-min-width($breakpoint) {
+        .col-offset-#{$breakpoint}-#{$offset} {
+          margin-left: calc(100% / 12 * #{$offset});
+        }
       }
     }
   }

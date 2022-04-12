@@ -120,6 +120,34 @@
   }
 }
 
+/* Displays */
+
+.d-none {
+  display: none !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-flex {
+  display: block !important;
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @include media-min-width($breakpoint) {
+    @each $size, $length in $spacers {
+      .d-#{$breakpoint}-none {
+        display: none !important;
+      }
+      .d-#{$breakpoint}-block {
+        display: block !important;
+      }
+      .d-#{$breakpoint}-flex {
+        display: block !important;
+      }
+    }
+  }
+}
+
 /* Typography */
 
 .fs-sm {
