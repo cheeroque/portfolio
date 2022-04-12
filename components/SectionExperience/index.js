@@ -5,7 +5,7 @@ export default function SectionExperience() {
     <section className="section section-secondary">
       <div className="container">
         <h2>My job experience</h2>
-        <Collapse fadeColor="secondary-container" />
+        <Collapse fadeColor="secondary-container" maxHeight={800} />
       </div>
     </section>
   );

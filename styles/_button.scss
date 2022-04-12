@@ -32,4 +32,28 @@
     opacity: 0.15;
     cursor: default;
   }
+
+  &.btn-primary {
+    color: var(--on-primary);
+    border-color: var(--primary);
+    background-color: var(--primary);
+
+    &:not(:disabled):active {
+      color: var(--on-tertiary);
+      border-color: var(--tertiary);
+      background-color: var(--tertiary);
+    }
+
+    &:not(:disabled):focus {
+      color: var(--on-tertiary);
+      border-color: var(--tertiary);
+      background-color: var(--tertiary);
+    }
+
+    &:not(:disabled):hover {
+      color: var(--on-secondary);
+      border-color: var(--secondary);
+      background-color: var(--secondary);
+    }
+  }
 }

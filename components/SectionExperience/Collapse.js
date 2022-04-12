@@ -3,33 +3,43 @@ import PropTypes from 'prop-types';
 
 import CollapseContent from './CollapseContent';
 
-import styles from './Collapse.module.scss';
-
-export default function SectionExperienceCollapse({ fadeColor }) {
+export default function SectionExperienceCollapse({ fadeColor, maxHeight }) {
   const collapseRef = useRef();
   const [collapsed, setCollapsed] = useState(true);
+  const [currentHeight, setCurrentHeight] = useState(`${maxHeight}px`);
 
   function toggleCollapse() {
+    if (collapsed) {
+      const fullHeight = collapseRef?.current?.offsetHeight;
+      setCurrentHeight(fullHeight ? `${fullHeight}px` : 'auto');
+    } else {
+      setCurrentHeight(`${maxHeight}px`);
+    }
     setCollapsed(!collapsed);
-    console.log(collapseRef.current);
   }
 
   return (
-    <div
-      ref={collapseRef}
-      className={styles.collapse}
-      style={{ '--fade-color': `var(--${fadeColor})` }}
-    >
-      <div className={styles.collapseContent}>
-        <CollapseContent />
+    <div>
+      <div
+        className="collapse mb-32 mb-lg-48"
+        style={{
+          '--fade-color': `var(--${fadeColor})`,
+          height: currentHeight,
+        }}
+      >
+        <div ref={collapseRef}>
+          <CollapseContent />
+        </div>
       </div>
       <button
-        className="btn"
+        className={`btn btn-primary collapse-toggle ${
+          collapsed ? 'collapsed' : 'expanded'
+        }`}
         onClick={() => {
           toggleCollapse();
         }}
       >
-        Collapse
+        {collapsed ? 'Show all' : 'Collapse'}
       </button>
     </div>
   );
@@ -37,4 +47,5 @@ export default function SectionExperienceCollapse({ fadeColor }) {
 
 SectionExperienceCollapse.propTypes = {
   fadeColor: PropTypes.string,
+  maxHeight: PropTypes.number,
 };

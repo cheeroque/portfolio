@@ -7,7 +7,7 @@ export default function SectionExperienceCollapseContent() {
     <div>
       {experiences.map((experience, index) =>
         experience.break ? (
-          <div className={styles.break + ' row'}>
+          <div key={`break-${index}`} className={styles.break + ' row'}>
             <div className="col-12 col-xxl-10 col-offset-xxl-1">
               {experience.description.map((line, lineIndex) => (
                 <p key={`break-line-${index}-${lineIndex}`}>{line}</p>

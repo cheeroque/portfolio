@@ -1,0 +1,33 @@
+.collapse {
+  overflow: hidden;
+  transition: $transition;
+  transition-property: height;
+}
+
+.collapse-toggle {
+  width: 100%;
+  padding: 0.875rem 2rem;
+
+  &::after {
+    display: block;
+    content: '';
+    width: 12px;
+    height: 10px;
+    margin-left: 1rem;
+    background-color: currentColor;
+    clip-path: path('m6 9-6-8 12 9e-7z');
+    transition: $transition;
+  }
+
+  &.expanded {
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+@include media-min-width('sm') {
+  .collapse-toggle {
+    width: auto;
+  }
+}
