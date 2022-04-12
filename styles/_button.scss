@@ -1,5 +1,6 @@
 .btn {
   @include responsive-font-size(1.125rem, 1.25);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -11,8 +12,9 @@
   background-color: transparent;
   cursor: pointer;
   transition: $transition;
-  transition-property: color, border-color, background-color;
+  transition-property: color, border-color, background-color, opacity;
   appearance: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:not(:disabled):active {
     color: var(--secondary);
@@ -24,5 +26,10 @@
 
   &:not(:disabled):hover {
     color: var(--primary);
+  }
+
+  &:disabled {
+    opacity: 0.15;
+    cursor: default;
   }
 }

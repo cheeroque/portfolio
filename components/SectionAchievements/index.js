@@ -7,8 +7,8 @@ export default function SectionAchievements() {
       <div className="container">
         <h2>My achievements</h2>
         <p className="mb-24 mb-xxl-64">Project I worked&nbsp;on include...</p>
-        <Swiper slides={slides} />
       </div>
+      <Swiper slides={slides} />
     </section>
   );
 }
