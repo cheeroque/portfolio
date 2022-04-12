@@ -17,6 +17,7 @@ body {
   @include responsive-font-size(1.25rem, 1.2);
 
   line-height: 1.5;
+  color: var(--on-background);
 }
 
 .section {
