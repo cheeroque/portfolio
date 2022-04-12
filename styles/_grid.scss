@@ -34,6 +34,11 @@
     padding-right: $grid-gap * 0.5;
   }
 
+  .col-auto {
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
   @for $count from 1 through 12 {
     .col-#{$count} {
       flex: 0 0 calc(100% / 12 * #{$count});
@@ -41,13 +46,32 @@
     }
   }
 
+  @for $offset from 1 through 11 {
+    .col-offset-#{$offset} {
+      margin-left: calc(100% / 12 * #{$offset});
+    }
+  }
+
   @each $breakpoint, $width in $breakpoints {
+    @include media-min-width($breakpoint) {
+      .col-#{$breakpoint}-auto {
+        flex: 0 0 auto;
+        max-width: none;
+      }
+    }
+
     @for $count from 1 through 12 {
       @include media-min-width($breakpoint) {
         .col-#{$breakpoint}-#{$count} {
           flex-basis: calc(100% / 12 * #{$count});
           max-width: calc(100% / 12 * #{$count});
         }
+      }
+    }
+
+    @for $offset from 1 through 11 {
+      .col-offset-#{$breakpoint}-#{$offset} {
+        margin-left: calc(100% / 12 * #{$offset});
       }
     }
   }

@@ -25,6 +25,28 @@
 }
 
 @each $size, $length in $spacers {
+  .m-n#{$size} {
+    margin: -$length !important;
+  }
+  .mt-n#{$size},
+  .my-n#{$size} {
+    margin-top: -$length !important;
+  }
+  .me-n#{$size},
+  .mx-n#{$size} {
+    margin-right: -$length !important;
+  }
+  .mb-n#{$size},
+  .my-n#{$size} {
+    margin-bottom: -$length !important;
+  }
+  .ms-n#{$size},
+  .mx-n#{$size} {
+    margin-left: -$length !important;
+  }
+}
+
+@each $size, $length in $spacers {
   .g-#{$size} {
     gap: $length !important;
   }
@@ -48,7 +70,7 @@
           #{$prop}-top: $length !important;
         }
         .#{$abbrev}e-#{$breakpoint}-#{$size},
-        .#{$abbrev}x-#{$breakpoint}lg-#{$size} {
+        .#{$abbrev}x-#{$breakpoint}-#{$size} {
           #{$prop}-right: $length !important;
         }
         .#{$abbrev}b-#{$breakpoint}-#{$size},
@@ -59,6 +81,28 @@
         .#{$abbrev}x-#{$breakpoint}-#{$size} {
           #{$prop}-left: $length !important;
         }
+      }
+    }
+
+    @each $size, $length in $spacers {
+      .m-#{$breakpoint}-n#{$size} {
+        margin: -$length !important;
+      }
+      .mt-#{$breakpoint}-n#{$size},
+      .my-#{$breakpoint}-n#{$size} {
+        margin-top: -$length !important;
+      }
+      .me-#{$breakpoint}-n#{$size},
+      .mx-#{$breakpoint}-n#{$size} {
+        margin-right: -$length !important;
+      }
+      .mb-#{$breakpoint}-n#{$size},
+      .my-#{$breakpoint}-n#{$size} {
+        margin-bottom: -$length !important;
+      }
+      .ms-#{$breakpoint}-n#{$size},
+      .mx-#{$breakpoint}-n#{$size} {
+        margin-left: -$length !important;
       }
     }
 
@@ -74,4 +118,27 @@
       }
     }
   }
+}
+
+/* Typography */
+
+.fs-sm {
+  @include responsive-font-size(0.875rem, 1.25);
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+.fw-500 {
+  font-weight: 500 !important;
+}
+.fw-600 {
+  font-weight: 600 !important;
+}
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
 }

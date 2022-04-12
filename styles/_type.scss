@@ -88,3 +88,16 @@ a {
     color: var(--primary);
   }
 }
+
+a.text-primary,
+.text-primary a {
+  &:active {
+    text-decoration: none;
+    color: var(--tertiary);
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--secondary);
+  }
+}

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Hero from '../components/Hero';
+import SectionAchievements from '../components/SectionAchievements';
 import SectionProfile from '../components/SectionProfile';
 import SectionSkills from '../components/SectionSkills';
 
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <SectionProfile />
         <SectionSkills />
+        <SectionAchievements />
       </main>
     </div>
   );

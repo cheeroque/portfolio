@@ -1,4 +1,6 @@
-import styles from './SectionSkillsButton.module.scss';
+import PropTypes from 'prop-types';
+
+import styles from './Button.module.scss';
 
 export default function SectionSkillsButton({ skill }) {
   return (
@@ -12,3 +14,7 @@ export default function SectionSkillsButton({ skill }) {
     </button>
   );
 }
+
+SectionSkillsButton.propTypes = {
+  skill: PropTypes.objectOf(PropTypes.string),
+};

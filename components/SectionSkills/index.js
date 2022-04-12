@@ -20,8 +20,8 @@ export default function SectionSkills() {
       <div className="container">
         <h2>My skills</h2>
         <div className={styles.skillsGrid}>
-          {skills.map((skill) => (
-            <SectionSkillsButton skill={skill} />
+          {skills.map((skill, index) => (
+            <SectionSkillsButton skill={skill} key={`skill-${index}`} />
           ))}
         </div>
       </div>

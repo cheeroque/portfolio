@@ -1,0 +1,24 @@
+@import '~/styles/mixins';
+@import '~/styles/variables';
+
+.swiper {
+}
+
+.slideImageWrapper {
+  @include aspect(0.8);
+}
+
+.slideImage {
+  object-fit: cover;
+}
+
+.srcLink {
+  display: flex;
+  align-items: center;
+}
+
+@include media-max-width('md') {
+  .slideImageWrapper {
+    margin-bottom: 1rem;
+  }
+}
