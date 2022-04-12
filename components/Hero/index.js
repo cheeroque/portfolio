@@ -13,7 +13,7 @@ export default function Hero() {
           </div>
           <div className="col-12 col-sm-4 col-md-5">
             <img
-              srcset="/images/me-336w.webp 336w, /images/me-420w.webp 420w, /images/me-620w.webp 620w"
+              srcSet="/images/me-336w.webp 336w, /images/me-420w.webp 420w, /images/me-620w.webp 620w"
               sizes="(max-width: 767px) 336px, (max-width: 991px) 420px, 620px"
               src="/images/me-620w.png"
               className={styles.heroImage}
