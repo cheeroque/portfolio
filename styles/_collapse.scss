@@ -1,7 +1,35 @@
 .collapse {
+  position: relative;
   overflow: hidden;
   transition: $transition;
   transition-property: height;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--collapse-max-height) * 0.25);
+    background-image: linear-gradient(
+      to top,
+      var(--collapse-fade-color),
+      transparent
+    );
+    opacity: 1;
+    pointer-events: none;
+    transform: translateY(0);
+    transition: $transition;
+    transition-property: transform, opacity;
+  }
+
+  &.expanded {
+    &::after {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
 }
 
 .collapse-toggle {

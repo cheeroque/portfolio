@@ -21,9 +21,12 @@ export default function SectionExperienceCollapse({ fadeColor, maxHeight }) {
   return (
     <div>
       <div
-        className="collapse mb-32 mb-lg-48"
+        className={`collapse mb-32 mb-lg-48 ${
+          collapsed ? 'collapsed' : 'expanded'
+        }`}
         style={{
-          '--fade-color': `var(--${fadeColor})`,
+          '--collapse-fade-color': `var(--${fadeColor})`,
+          '--collapse-max-height': `${maxHeight}px`,
           height: currentHeight,
         }}
       >
