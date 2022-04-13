@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import CollapseContent from './CollapseContent';
-
-export default function SectionExperienceCollapse({ fadeColor, maxHeight }) {
+export default function SectionExperienceCollapse({
+  fadeColor,
+  maxHeight,
+  renderContent,
+}) {
   const collapseRef = useRef();
   const [collapsed, setCollapsed] = useState(true);
   const [currentHeight, setCurrentHeight] = useState(`${maxHeight}px`);
@@ -30,9 +32,7 @@ export default function SectionExperienceCollapse({ fadeColor, maxHeight }) {
           height: currentHeight,
         }}
       >
-        <div ref={collapseRef}>
-          <CollapseContent />
-        </div>
+        <div ref={collapseRef}>{renderContent()}</div>
       </div>
       <button
         className={`btn btn-primary collapse-toggle ${
