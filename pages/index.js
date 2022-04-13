@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import Hero from '../components/Hero';
 import SectionAchievements from '../components/SectionAchievements';
+import SectionEducation from '../components/SectionEducation';
 import SectionExperience from '../components/SectionExperience';
 import SectionProfile from '../components/SectionProfile';
 import SectionSkills from '../components/SectionSkills';
@@ -26,6 +27,7 @@ export default function Home() {
         <SectionSkills />
         <SectionAchievements />
         <SectionExperience />
+        <SectionEducation />
       </main>
     </div>
   );
