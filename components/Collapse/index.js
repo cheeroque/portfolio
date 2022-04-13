@@ -1,11 +1,7 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function SectionExperienceCollapse({
-  fadeColor,
-  maxHeight,
-  renderContent,
-}) {
+export default function Collapse({ fadeColor, maxHeight, renderContent }) {
   const collapseRef = useRef();
   const [collapsed, setCollapsed] = useState(true);
   const [currentHeight, setCurrentHeight] = useState(`${maxHeight}px`);
@@ -48,7 +44,7 @@ export default function SectionExperienceCollapse({
   );
 }
 
-SectionExperienceCollapse.propTypes = {
+Collapse.propTypes = {
   fadeColor: PropTypes.string,
   maxHeight: PropTypes.number,
 };

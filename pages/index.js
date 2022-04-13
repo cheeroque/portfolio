@@ -29,6 +29,8 @@ export default function Home() {
         <SectionExperience />
         <SectionEducation />
       </main>
+
+      <div id="modal-root"></div>
     </div>
   );
 }

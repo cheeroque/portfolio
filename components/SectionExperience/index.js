@@ -1,4 +1,4 @@
-import Collapse from './Collapse';
+import Collapse from '../Collapse';
 import CollapseContent from './CollapseContent';
 
 export default function SectionExperience() {

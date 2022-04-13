@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import Achievement from './Achievement';
+
 import 'swiper/css';
 import 'swiper/css/keyboard';
 import 'swiper/css/pagination';
@@ -59,6 +61,7 @@ export default function SectionAchievementsSwiper({ slides }) {
             <SwiperSlide key={`slide-${index}`}>
               <div className="row mx-lg-n32">
                 <div className="col-12 col-md-5 px-lg-32">
+                  <Achievement images={slide.images} />
                   <div className={styles.slideImageWrapper}>
                     <img
                       src={`/images/achievements/${slide.images[0]}`}
