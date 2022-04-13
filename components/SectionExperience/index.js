@@ -8,7 +8,7 @@ export default function SectionExperience() {
         <h2>My job experience</h2>
         <Collapse
           fadeColor="secondary-container"
-          maxHeight={800}
+          maxHeight={640}
           renderContent={() => CollapseContent()}
         />
       </div>

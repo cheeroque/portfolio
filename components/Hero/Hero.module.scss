@@ -46,6 +46,10 @@
 }
 
 @include media-min-width('sm') {
+  .sectionHero {
+    height: 480px;
+  }
+
   .container {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -71,13 +75,15 @@
   }
 
   .heroImage {
-    width: 420px;
+    width: 380px;
     bottom: 0;
   }
 }
 
 @include media-min-width('xl') {
   .sectionHero {
+    height: 640px;
+
     &::before {
       left: 50%;
       right: auto;
@@ -86,6 +92,7 @@
   }
 
   .heroImage {
+    width: 480px;
     right: calc(
       50vw - #{map-get($container-widths, 'xl') * 0.5} - #{$grid-gap}
     );
@@ -94,8 +101,6 @@
 
 @include media-min-width('xxl') {
   .sectionHero {
-    height: 800px;
-
     &::before {
       left: 50%;
       right: auto;
@@ -104,9 +109,9 @@
   }
 
   .heroImage {
+    width: 520px;
     right: calc(
       50vw - #{map-get($container-widths, 'xxl') * 0.5} - #{$grid-gap}
     );
-    width: 620px;
   }
 }
